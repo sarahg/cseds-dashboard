@@ -1,1 +1,5 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# CSE Dedicated Support Dashboard
+
+### Development
+
+Start the local development environment: `npm run dev`
