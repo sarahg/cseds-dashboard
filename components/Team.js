@@ -4,18 +4,19 @@ import Orgs from "./Orgs";
 
 const csv = "http://localhost:3000/data/team-report.csv";
 
-class TeamReport extends Component {
+class Team extends Component {
   constructor(props) {
     super(props);
 
     let now = new Date();
     const options = {
       year: "numeric",
-      month: "long",
+      month: "numeric",
       day: "numeric",
       hour12: true,
       hour: "numeric",
       minute: "numeric",
+      timeZoneName: "short"
     };
     this.reportDate = now.toLocaleString(undefined, options);
 
@@ -53,13 +54,17 @@ class TeamReport extends Component {
 
     return (
       <div>
-        <h2>Active Tickets {this.reportDate}</h2>
-        <div className="ticket-report">{ticketLists}</div>
+        <h2 className="text-xl">Active Tickets {this.reportDate}</h2>
+        <div className="ticket-report lg:grid gap-4 grid-cols-3 sm:block">{ticketLists}</div>
       </div>
     );
   }
 }
 
+/**
+ * Get unique CSE names from the ticket list.
+ * @param {*} data 
+ */
 const getCSEs = (data) => {
   let names = [];
   if (data.length) {
@@ -72,4 +77,4 @@ const getCSEs = (data) => {
   return names;
 };
 
-export default TeamReport;
+export default Team;

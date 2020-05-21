@@ -1,0 +1,12 @@
+body {
+    font-family: Tablet Gothic,Frutiger,Frutiger Linotype,Univers,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+
+a {
+    color: #1794c7;
+    text-decoration: underline;
+    transition: .2s all;
+}
+a:hover {
+    opacity: .65;
+}

@@ -13,7 +13,7 @@ const Orgs = (props) => {
     });
 
     orgList.push(
-      <div>
+      <div key={index} className="py-1">
         <h4 key={index}>{orgName}</h4>
         <Tickets key={index + '-org'} tickets={tickets} />
       </div>
@@ -21,9 +21,9 @@ const Orgs = (props) => {
   }
 
   return (
-    <div className="py-4">
-      <h3 key={props.index}>{props.name}</h3>
-      <div className="px-2">{orgList}</div>
+    <div className="py-4 px-4 bg-gray-200">
+      <h3 key={props.index} className="text-lg font-medium py-2">{props.name}</h3>
+      <div>{orgList}</div>
     </div>
   );
 };
