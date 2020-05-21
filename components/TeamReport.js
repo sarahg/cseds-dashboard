@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { readRemoteFile } from "react-papaparse";
 import TicketList from "./TicketList";
 
-const csv = "http://localhost:3000/data/team-report-1589844860166.csv";
+const csv = "http://localhost:3000/data/team-report.csv";
 
 class TeamReport extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class TeamReport extends Component {
       
       // Tickets for this CSE.
       let tickets = this.state.tickets.filter(obj => {
-        return obj.Name === name
+        return obj.name === name
       })
 
       ticketLists.push(
@@ -65,7 +65,7 @@ const getCSEs = (data) => {
   if (data.length) {
     names = new Set(
       data.map(function (el) {
-        return el.Name;
+        return el.name;
       })
     );
   }

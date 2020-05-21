@@ -1,9 +1,37 @@
-import React from "react"
+import React from "react";
 
 const TicketList = (props) => {
-    console.log(props.tickets)
+  let orgs = getOrgs(props.tickets);
 
-    return <h3 key={props.index}>{props.name}</h3>
-}
+  if (props.name == "Brenda Boggs") {
+    console.log(props.tickets);
+    console.log(orgs);
+  }
 
-export default TicketList
+  // List orgs
+  let tickets = []
+  for (const [index, orgName] of orgs.entries()) {
+    tickets.push(<h4 key={index}>{orgName}</h4>)
+  }
+
+  // List tickets per org
+
+  return (
+    <div className="py-4">
+      <h3 key={props.index}>{props.name}</h3>
+      <div className="px-2">{tickets}</div>
+    </div>
+  );
+
+};
+
+const getOrgs = (tickets) => {
+  let orgNames = new Set(
+    tickets.map(function (el) {
+      return el.orgName;
+    })
+  );
+  return orgNames;
+};
+
+export default TicketList;
