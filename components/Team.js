@@ -27,6 +27,7 @@ class Team extends Component {
     const getData = () => {
       readRemoteFile(csv, {
         header: true,
+        skipEmptyLines: true,
         complete: (results) => {
           this.setState({ tickets: results.data });
         },
@@ -54,7 +55,7 @@ class Team extends Component {
 
     return (
       <div>
-        <h2 className="text-xl">Active Tickets {this.reportDate}</h2>
+        <h2 className="text-xl pb-2">Active Tickets {this.reportDate}</h2>
         <div className="ticket-report lg:grid gap-4 grid-cols-3 sm:block">{ticketLists}</div>
       </div>
     );
