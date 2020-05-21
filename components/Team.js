@@ -18,6 +18,7 @@ class Team extends Component {
       minute: "numeric",
       timeZoneName: "short"
     };
+    // @todo the date should reflect when the CSV was built
     this.reportDate = now.toLocaleString(undefined, options);
 
     this.state = { tickets: [] };
