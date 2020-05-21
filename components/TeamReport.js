@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { readRemoteFile } from "react-papaparse";
-import TicketList from "./TicketList";
+import Orgs from "./Orgs";
 
 const csv = "http://localhost:3000/data/team-report.csv";
 
@@ -47,7 +47,7 @@ class TeamReport extends Component {
       })
 
       ticketLists.push(
-        <TicketList key={index} name={name} tickets={tickets} />
+        <Orgs key={index} name={name} tickets={tickets} />
       );
     }
 
