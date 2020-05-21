@@ -3,7 +3,7 @@ import Team from "../components/Team";
 
 export default function Home() {
   return (
-    <div className="container py-4">
+    <div className="container mx-auto py-4">
       <Head>
         <title>CSE Dedicated Support</title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,7 +13,7 @@ export default function Home() {
         />
       </Head>
 
-      <div className="container mx-auto px-4">
+      <div className="px-4">
         <main>
           <h1 className="title py-4 text-2xl">CSE Dedicated Support Dashboard</h1>
           <p>Tickets shown here are grouped by Lead and are not necessarily assigned to this person.</p>
