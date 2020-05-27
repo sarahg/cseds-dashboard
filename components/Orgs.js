@@ -12,12 +12,6 @@ const Orgs = (props) => {
       return obj.orgName === orgName;
     });
 
-    // (╯°□°)╯︵ ┻━┻
-    // https://github.com/sarahg/cseds-api/issues/3
-    if (orgName === 'Nestl�') {
-      orgName = 'Nestlé'
-    }
-
     orgList.push(
       <div key={index} className="py-1">
         <h4 key={index}>{orgName} ({tickets.length})</h4>
